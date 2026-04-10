@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\gabri\AppData\Local\Microsoft\WinGet\Packages\Kubernetes.kompose_Microsoft.Winget.Source_8wekyb3d8bbwe\kompose.exe convert -f compose.yaml
+    kompose.version: 1.38.0 (a8f5d1cbd)
+  labels:
+    io.kompose.service: gradio-json
+  name: gradio-json
+spec:
+  ports:
+    - name: "7860"
+      port: 7860
+      targetPort: 7860
+  selector:
+    io.kompose.service: gradio-json

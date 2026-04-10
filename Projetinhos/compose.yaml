@@ -1,17 +1,52 @@
 services:
   gradio-json:
+    image: coutelas/gradio-json
     build:
       context: gradio-json
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile 
     ports:
       - 7860:7860
-    volumes:
-      - /work
+
   backend-json:
+    image: coutelas/backend-json
     build:
       context: backend-json
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile 
     ports:
       - 8080:8080
+
+  gradio-visao:
+    image: coutelas/gradio-visao
+    build:
+      context: gradio-visao
+      dockerfile: Dockerfile
+    ports:
+      - "7861:7861"
+    depends_on:
+      - api-visao
+    restart: always
+    deploy:
+      replicas: 3
+
+  api-visao:
+    image: coutelas/api-visao:v1.0
+    build:
+      context: api-visao
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - api-armazenamento
+
+  api-armazenamento:
+    image: coutelas/api-armazenamento:v1.0
+    build:
+      context: api-armazenamento
+      dockerfile: Dockerfile
+    ports:
+    - "8082:8082"
     volumes:
-      - /code
+    - dados-imagens:/dados
+
+volumes:
+  dados-imagens:

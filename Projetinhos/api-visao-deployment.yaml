@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\gabri\AppData\Local\Microsoft\WinGet\Packages\Kubernetes.kompose_Microsoft.Winget.Source_8wekyb3d8bbwe\kompose.exe convert -f compose.yaml
+    kompose.version: 1.38.0 (a8f5d1cbd)
+  labels:
+    io.kompose.service: api-visao
+  name: api-visao
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: api-visao
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: C:\Users\gabri\AppData\Local\Microsoft\WinGet\Packages\Kubernetes.kompose_Microsoft.Winget.Source_8wekyb3d8bbwe\kompose.exe convert -f compose.yaml
+        kompose.version: 1.38.0 (a8f5d1cbd)
+      labels:
+        io.kompose.service: api-visao
+    spec:
+      containers:
+        - image: coutelas/api-visao:v1.0
+          name: api-visao
+          ports:
+            - containerPort: 8081
+              protocol: TCP
+      restartPolicy: Always

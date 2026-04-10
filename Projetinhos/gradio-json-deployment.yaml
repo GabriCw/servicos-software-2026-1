@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\gabri\AppData\Local\Microsoft\WinGet\Packages\Kubernetes.kompose_Microsoft.Winget.Source_8wekyb3d8bbwe\kompose.exe convert -f compose.yaml
+    kompose.version: 1.38.0 (a8f5d1cbd)
+  labels:
+    io.kompose.service: gradio-json
+  name: gradio-json
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: gradio-json
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: C:\Users\gabri\AppData\Local\Microsoft\WinGet\Packages\Kubernetes.kompose_Microsoft.Winget.Source_8wekyb3d8bbwe\kompose.exe convert -f compose.yaml
+        kompose.version: 1.38.0 (a8f5d1cbd)
+      labels:
+        io.kompose.service: gradio-json
+    spec:
+      containers:
+        - image: coutelas/gradio-json
+          name: gradio-json
+          ports:
+            - containerPort: 7860
+              protocol: TCP
+      restartPolicy: Always
