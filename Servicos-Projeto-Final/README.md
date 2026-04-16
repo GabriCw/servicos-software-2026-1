@@ -64,7 +64,7 @@ O fluxo funciona assim:
 
 Tudo isso acontece em uma única chamada ao modelo de linguagem, que decide internamente se precisa acionar a ferramenta ou não antes de responder.
 
-O modelo de linguagem em si é configurável pelo arquivo `.env`. Por padrão o projeto usa o Groq (que oferece inferência rápida e gratuita), mas também funciona com OpenAI ou HuggingFace.
+O modelo de linguagem em si é configurável pelo arquivo `.env`. Por padrão o projeto usa a OpenAI mas também funciona com outras IAs.
 
 ### Regras que o agente segue
 
