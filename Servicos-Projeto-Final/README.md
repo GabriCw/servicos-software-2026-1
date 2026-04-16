@@ -1,3 +1,13 @@
+# Membros do Projeto
+
+Caio Kurek Marques Manuel - 20.01383-3
+
+Felipe Matos Silvieri - 20.00314-5
+
+Gabriel dos Santos Couto - 20.00273-4
+
+Matheus Ferreira Palú - 20.00332-3
+
 # ViajaFácil
 
 ViajaFácil é um chatbot de recomendação de vestimentas para viagens. Você informa o destino e as datas, e ele consulta dados climáticos reais para te dizer o que levar na mala.
