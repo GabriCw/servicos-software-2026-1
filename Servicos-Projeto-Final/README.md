@@ -126,7 +126,6 @@ Projeto_Final/
 |
 ├── compose.yaml            orquestra os dois containers
 ├── .env                    variáveis de ambiente (não versionar)
-├── COMO_RODAR.md           instruções para subir o projeto
 |
 ├── backend/
 |   ├── Dockerfile          imagem Python 3.11 com uvicorn
